@@ -10,9 +10,15 @@ import { Entity } from "./models/Entity";
 import { Relation } from "./models/Relation";
 
 const prettierOptions: Prettier.Options = {
-    parser: "typescript",
-    endOfLine: "auto",
+    trailingComma: "es5",
+    useTabs: false,
+    tabWidth: 2,
+    semi: true,
     singleQuote: true,
+    bracketSpacing: true,
+    endOfLine: "crlf",
+    arrowParens: "always",
+    printWidth: 140,
 };
 
 export default function modelGenerationPhase(
