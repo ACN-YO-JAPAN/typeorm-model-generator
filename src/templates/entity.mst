@@ -9,6 +9,10 @@ import {{localImport (toEntityName .)}} from './{{toFileName .}}'
 {{printPropertyVisibility}}{{toPropertyName tscName}}{{#if options.nullable}}{{strictMode}}{{/if}}:{{tscType}}{{#if options.nullable}} | null{{/if}};
 
 {{/inline}}
+{{#*inline "Column-null"}}
+{{#if options.nullable}}{{toPropertyName tscName}} = null {{/if}};
+
+{{/inline}}
 {{#*inline "JoinColumnOptions"}}
 { name: "{{name}}", referencedColumnName: "{{toPropertyName referencedColumnName}}" },
 {{/inline}}
@@ -28,6 +32,10 @@ import {{localImport (toEntityName .)}} from './{{toFileName .}}'
 {{printPropertyVisibility}}constructor(init?: Partial<{{toEntityName entityName}}>) {
     {{#activeRecord}}super();
     {{/activeRecord}}Object.assign(this, init);
+}
+{{printPropertyVisibility}}constructor() {
+    {{#activeRecord}}super();
+    {{/activeRecord}}{{#columns}}{{#if options.nullable}}{{toPropertyName tscName}} = null; {{/if}}{{/columns~}}
 }
 {{/inline}}
 {{#*inline "Entity"}}
