@@ -295,16 +295,16 @@ export default class PostgresDriver extends AbstractDriver {
                 ret.tsType = "string";
                 break;
             case "timestamptz":
-                ret.tsType = "Date";
+                ret.tsType = "string";
                 break;
             case "timestamp":
                 ret.tsType = "string";
                 break;
             case "timestamp without time zone":
-                ret.tsType = "Date";
+                ret.tsType = "string";
                 break;
             case "timestamp with time zone":
-                ret.tsType = "Date";
+                ret.tsType = "string";
                 break;
             case "date":
                 ret.tsType = "string";
