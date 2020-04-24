@@ -31,11 +31,9 @@ import {{localImport (toEntityName .)}} from './{{toFileName .}}'
 {{#*inline "Constructor"}}
 {{printPropertyVisibility}}constructor(init?: Partial<{{toEntityName entityName}}>) {
     {{#activeRecord}}super();
-    {{/activeRecord}}Object.assign(this, init);
-}
-{{printPropertyVisibility}}constructor() {
-    {{#activeRecord}}super();
-    {{/activeRecord}}{{#columns}}{{#if options.nullable}}{{toPropertyName tscName}} = null; {{/if}}{{/columns~}}
+    {{/activeRecord}}
+    {{#columns}}{{#if options.nullable}}this.{{toPropertyName tscName}} = null; {{/if}}{{/columns~}}
+    Object.assign(this, init);
 }
 {{/inline}}
 {{#*inline "Entity"}}
