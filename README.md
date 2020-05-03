@@ -27,11 +27,11 @@ All database drivers except oracle are installed by default. To use typeorm-mode
 
 ## Usage 
 There are two way to use this utility:
-- Use step by step wizard which will guide you though the process - just type `npx typeorm-model-generator` in your console.
+- Use step by step wizard which will guide you though the process - just type `npx github:ACN-YO-JAPAN/typeorm-model-generator` in your console.
 - Provide all parameters through command line(examples below)
 
 
-Use `npx typeorm-model-generator --help` to see all available parameters with their descriptions. Some basic parameters below:
+Use `npx github:ACN-YO-JAPAN/typeorm-model-generator --help` to see all available parameters with their descriptions. Some basic parameters below:
 ```shell
 Usage: typeorm-model-generator -h <host> -d <database> -p [port] -u <user> -x
 [password] -e [engine]
